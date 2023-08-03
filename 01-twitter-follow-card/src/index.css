@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    background-color: #212121;
+    color: #fff;
+    font-family: system-ui;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    border: 1px solid #fff;
+    padding: 1.25em;
+    border-radius: 15px;
+    background: #151515;
+    box-shadow: 0 0 15px #000000b0;
+    min-width: 320px;
+}
+
+.tw-follow-card header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625em;
+}
+
+.tw-follow-card img {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.tw-follow-card div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tw-follow-card span {
+    color: #666;
+}
+
+.tw-follow-card button {
+    border: 0;
+    background: #fff;
+    color: #000;
+    font-size: .9em;
+    padding: .5em 1em;
+    border-radius: 2em;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+.tw-follow-card button.active {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #ccc;
+}
+
+.tw-follow-card button:hover {
+    cursor: pointer;
+}
