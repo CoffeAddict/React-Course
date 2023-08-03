@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background-color: #212121;
-    color: #fff;
+    color: #eee;
     font-family: system-ui;
     display: grid;
     place-content: center;
@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    border: 1px solid #fff;
+    border: 1px solid #ccc;
     padding: 1.25em;
     border-radius: 15px;
     background: #151515;
@@ -17,29 +17,56 @@ body {
     min-width: 320px;
 }
 
-.tw-follow-card header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.625em;
+header {
+    margin-bottom: 1em;
+    text-align: center;
 }
 
-.tw-follow-card img {
-    width: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
+header h1 {
+    margin-top: 0;
 }
 
-.tw-follow-card div {
+.ttt-game {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(3, 3fr);
+    grid-template-rows: repeat(3, 3fr);
+}
+
+.ttt-game .square {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 96px;
+    display: grid;
+    place-content: center;
+    transition: transform .3s ease, background-color .3s ease;
+    font-size: 2.5em;
+    user-select: none;
+}
+
+.ttt-game .square:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: #111;
+}
+
+.ttt-current-turn {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.ttt-current-turn h2 {
+    margin-bottom: .5em;
+}
+
+.ttt-result {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    margin: 1em 0;
 }
 
-.tw-follow-card span {
-    color: #666;
-}
-
-.tw-follow-card button {
+.ttt-result button {
     border: 0;
     background: #fff;
     color: #000;
@@ -48,14 +75,11 @@ body {
     border-radius: 2em;
     font-weight: bold;
     margin-left: 1em;
+    max-width: fit-content;
+    margin: 0 auto;
+    margin-top: .5em;
 }
 
-.tw-follow-card button.active {
-    background: transparent;
-    color: #fff;
-    border: 1px solid #ccc;
-}
-
-.tw-follow-card button:hover {
+.ttt-result button:hover {
     cursor: pointer;
 }
