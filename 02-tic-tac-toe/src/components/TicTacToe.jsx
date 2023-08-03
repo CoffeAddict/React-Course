@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Square } from './Square'
+import confetti from 'canvas-confetti'
 
 const turns = ['x', 'o']
 
@@ -28,6 +29,7 @@ export function TicTacToe () {
         setBoard(newBoard)
         setTurn(turn == turns[0] ? turns[1] : turns[0])
 
+        saveOnStorage(newBoard)
         checkBoard(newBoard)
     }
 
@@ -36,6 +38,7 @@ export function TicTacToe () {
             if (!newBoard[combo[0]] || !newBoard[combo[1]] || !newBoard[combo[2]]) return true
             if (newBoard[combo[0]] == newBoard[combo[1]] && newBoard[combo[0]] == newBoard[combo[2]]) {
                 setWinner(turn)
+                confetti()
                 return false
             }
             return true
@@ -52,6 +55,15 @@ export function TicTacToe () {
     }
 
     function formatWinner (w) {return w == turns[0] ? '❌' : '🔵'}
+
+    function saveOnStorage (newBoard) {
+        localStorage.setItem('ttt-data', JSON.stringify(newBoard))
+    }
+
+    function getFromStorage () {
+        const localData = localStorage.getItem('ttt-data')
+        if (localData) setBoard(JSON.parse(localData))
+    }
 
     return (
         <>
