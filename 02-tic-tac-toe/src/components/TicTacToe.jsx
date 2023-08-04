@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Square } from './Square'
 import { WinnerModal } from './WinnerModal'
 import { turns, winnerCombos } from '../utils/const'
-import { clearStorage, getBoardFromStorage, getTurnFromStorage, saveBoardOnStorage, saveTurnOnStorage } from '../utils/dataManagement'
+import { clearStorage, getBoardFromStorage, getTurnFromStorage, getWinnerFromStorage, saveBoardOnStorage, saveTurnOnStorage, saveWinnerOnStorage } from '../utils/dataManagement'
 import confetti from 'canvas-confetti'
 
 export function TicTacToe () {
@@ -14,7 +14,9 @@ export function TicTacToe () {
     return getTurnFromStorage() || turns[0]
   })
 
-  const [winner, setWinner] = useState(null)
+  const [winner, setWinner] = useState(() => {
+    return getWinnerFromStorage() || null
+  })
 
   function updateBoard (index) {
     if (board[index] || winner != null) return
@@ -36,7 +38,8 @@ export function TicTacToe () {
     winnerCombos.every(combo => {
       if (!newBoard[combo[0]] || !newBoard[combo[1]] || !newBoard[combo[2]]) return true
       if (newBoard[combo[0]] == newBoard[combo[1]] && newBoard[combo[0]] == newBoard[combo[2]]) {
-        setWinner(turn)
+        setWinner(winner || turn)
+        if (!winner) saveWinnerOnStorage(turn)
         confetti()
         return false
       }
@@ -60,6 +63,7 @@ export function TicTacToe () {
 
   useEffect(() => {
     checkBoard(board)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -69,27 +73,29 @@ export function TicTacToe () {
       </header>
       <section className='ttt-game'>
         {
-                    board.map((_, index) => {
-                      return (
-                        <Square
-                          key={index}
-                          index={index}
-                          value={board[index]}
-                          updateBoard={updateBoard}
-                        />
-                      )
-                    })
-                }
+          board.map((_, index) => {
+            return (
+              <Square
+                key={index}
+                index={index}
+                value={board[index]}
+                updateBoard={updateBoard}
+              />
+            )
+          })
+        }
       </section>
       <section className='ttt-current-turn'>
         <h2>Turn</h2>
         <Square value={turn} />
       </section>
-      <WinnerModal
-        turns={turns}
-        winner={winner}
-        resetEventHandle={resetEventHandle}
-      />
+      {winner &&
+        <WinnerModal
+          turns={turns}
+          winner={winner}
+          resetEventHandle={resetEventHandle}
+        />
+      }
     </>
   )
 }
