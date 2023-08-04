@@ -1,11 +1,11 @@
-import {TicTacToe} from './components/TicTacToe'
+import { TicTacToe } from './components/TicTacToe'
 
 function App () {
-    return (
-        <div className="container">
-            <TicTacToe/>
-        </div>
-    )
+  return (
+    <div className='container'>
+      <TicTacToe />
+    </div>
+  )
 }
 
 export default App

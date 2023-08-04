@@ -1,16 +1,16 @@
 const icons = {
-    x: '❌',
-    o: '🔵'
+  x: '❌',
+  o: '🔵'
 }
 
-export function Square ({value, updateBoard, index}) {
-    let turn = icons[value] || null
+export function Square ({ value, updateBoard, index }) {
+  const turn = icons[value] || null
 
-    function handleClick () {
-        updateBoard(index)
-    }
+  function handleClick () {
+    updateBoard(index)
+  }
 
-    return (
-        <div className="square" onClick={handleClick}>{turn}</div>
-    )
+  return (
+    <div className='square' onClick={handleClick}>{turn}</div>
+  )
 }
