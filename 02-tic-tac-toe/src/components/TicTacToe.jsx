@@ -1,24 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Square } from './Square'
+import { WinnerModal } from "./WinnerModal"
+import {turns, winnerCombos} from '../utils/const'
+import { clearStorage, getBoardFromStorage, getTurnFromStorage, saveBoardOnStorage, saveTurnOnStorage } from "../utils/dataManagement"
 import confetti from 'canvas-confetti'
 
-const turns = ['x', 'o']
-
-const winnerCombos = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6]
-]
-
 export function TicTacToe () {
-    const [board, setBoard] = useState(Array(9).fill(null))
-    const [turn, setTurn] = useState(turns[0])
-    const [winner, setWinner] = useState(null) //  is game running, false is tie
+    const [board, setBoard] = useState(() => {
+        return getBoardFromStorage() || Array(9).fill(null)
+    })
+
+    const [turn, setTurn] = useState(() => {
+        return getTurnFromStorage() || turns[0]
+    })
+
+    const [winner, setWinner] = useState(null)
 
     function updateBoard (index) {
         if (board[index] || winner != null) return
@@ -26,10 +22,13 @@ export function TicTacToe () {
         let newBoard = [...board]
         newBoard[index] = turn
 
-        setBoard(newBoard)
-        setTurn(turn == turns[0] ? turns[1] : turns[0])
+        let newTurn = turn == turns[0] ? turns[1] : turns[0]
 
-        saveOnStorage(newBoard)
+        setBoard(newBoard)
+        setTurn(newTurn)
+
+        saveBoardOnStorage(newBoard)
+        saveTurnOnStorage(newTurn)
         checkBoard(newBoard)
     }
 
@@ -52,38 +51,22 @@ export function TicTacToe () {
         setWinner(null)
         setTurn(turns[0])
         setBoard(Array(9).fill(null))
+        clearStorage()
     }
 
-    function formatWinner (w) {return w == turns[0] ? '❌' : '🔵'}
-
-    function saveOnStorage (newBoard) {
-        localStorage.setItem('ttt-data', JSON.stringify(newBoard))
+    function resetEventHandle () {
+        resetGame()
     }
 
-    function getFromStorage () {
-        const localData = localStorage.getItem('ttt-data')
-        if (localData) setBoard(JSON.parse(localData))
-    }
+    useEffect(() => {
+        checkBoard(board)
+    }, [])
 
     return (
         <>
             <header className={`winner-${winner}`}>
                 <h1>Tic Tac Toe</h1>
             </header>
-
-            { winner &&
-                <section className="ttt-result">
-                    <span>Winner {formatWinner(winner)}!</span>
-                    <button onClick={resetGame}>Reset Game</button>
-                </section>
-            }
-            { winner == false &&
-                <section className="ttt-result">
-                    <span>Tie!</span>
-                    <button onClick={resetGame}>Reset Game</button>
-                </section>
-            }
-
             <section className="ttt-game">
                 {
                     board.map((_, index) => {
@@ -101,6 +84,10 @@ export function TicTacToe () {
                 <h2>Turn</h2>
                 <Square value={turn}/>
             </section>
+            <WinnerModal
+                turns={turns}
+                winner={winner}
+                resetEventHandle={resetEventHandle}/>
         </>
     )
 }
