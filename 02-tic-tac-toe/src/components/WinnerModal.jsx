@@ -3,7 +3,8 @@ export function WinnerModal ({ winner, resetEventHandle, turns }) {
   function formatWinner (w) { return w == turns[0] ? '❌' : '🔵' }
 
   return (
-    <>
+
+    <div className='ttt-result-container'>
       {winner &&
         <section className='ttt-result'>
           <span>Winner {formatWinner(winner)}!</span>
@@ -14,6 +15,6 @@ export function WinnerModal ({ winner, resetEventHandle, turns }) {
           <span>Tie!</span>
           <button onClick={resetEventHandle}>Reset Game</button>
         </section>}
-    </>
+    </div>
   )
 }
