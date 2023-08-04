@@ -64,6 +64,16 @@ header h1 {
     display: flex;
     flex-direction: column;
     margin: 1em 0;
+    background: #000;
+    padding: 3em;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px #000;
+}
+
+.ttt-result span {
+    font-weight: bold;
+    font-size: 2em;
 }
 
 .ttt-result button {
@@ -77,9 +87,20 @@ header h1 {
     margin-left: 1em;
     max-width: fit-content;
     margin: 0 auto;
-    margin-top: .5em;
+    margin-top: 1em;
 }
 
 .ttt-result button:hover {
     cursor: pointer;
+}
+
+.ttt-result-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000a1;
+    display: grid;
+    place-content: center;
 }
