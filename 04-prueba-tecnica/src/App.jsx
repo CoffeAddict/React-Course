@@ -9,9 +9,10 @@ function App() {
   const newFact = (fact) => {
     setFact(fact)
   }
+
   return (
     <>
-      {getFact.fact != null && (<h1>Fact: {getFact.fact}</h1>)}
+      {getFact.fact != null && (<h1>{getFact.fact}</h1>)}
       <ShowCatImage newFact={getFact}></ShowCatImage>
       <GetFactButton newFact={newFact}></GetFactButton>
     </>

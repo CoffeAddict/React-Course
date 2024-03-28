@@ -35,7 +35,6 @@ button:hover {
 
 img {
   margin: 2em auto;
-  border: 2px solid #fff;
   border-radius: 5px;
   width: auto;
   height: 300px;
@@ -46,4 +45,5 @@ h1 {
   max-width: 500px;
   padding: 0 16px;
   margin: 0 auto;
+  min-height: 3em;
 }
