@@ -14,7 +14,7 @@ export function TwitterFollowCard ({ children, isFollowing, user }) {
     return (
         <article className="tw-follow-card">
             <header>
-                <img src={imgSource} alt={`${user} avatar`} />
+                <img src={imgSource} alt={`${user} avatar`} width="50px" height="50px"/>
                 <div>
                     <strong>{children}</strong>
                     <span>@{user}</span>
