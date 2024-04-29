@@ -1,0 +1,27 @@
+.movies-container {
+    list-style-type: none;
+    display: grid;
+    width: 100%;
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.movies-container .movie {
+    border: 1px solid #4e5070;
+    background-color: #181823;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movies-container .movie p {
+    margin: 0;
+    margin-bottom: 8px;
+    min-height: 45px;
+}
+
+.movies-container .movie img {
+    border-radius: 4px;
+}

@@ -1,0 +1,76 @@
+{
+    "Search": [
+      {
+        "Title": "Barb and Star Go to Vista Del Mar",
+        "Year": "2021",
+        "imdbID": "tt3797512",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNTQ2OGU1OTgtYmVhYi00MGIxLTg4MzQtYWFlZjIxYTViOTc4XkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Mar de plástico",
+        "Year": "2015-2016",
+        "imdbID": "tt4719586",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZDQ3MjRkMTQtMTBmMy00MWZhLTlkMmQtZmZkZmI0NGM5OGRkXkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_SX300.jpg"
+      },
+      {
+        "Title": "El mar",
+        "Year": "2000",
+        "imdbID": "tt0220631",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTk1MDU5NTA5MF5BMl5BanBnXkFtZTcwNTg2MjcyMQ@@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Sange Mar Mar",
+        "Year": "2016–",
+        "imdbID": "tt6260132",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYTczZjVlMjAtNzEyZS00OTU5LTg0OTktZmM5NDdhYjM1ZjJiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjYyOTA1NDY@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Mar de fondo",
+        "Year": "2020",
+        "imdbID": "tt12570276",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMjEyODE3NjUtMmJjZC00OWUyLTg1YmYtMGE1MGJhNzUyYzE5XkEyXkFqcGdeQXVyMTU3NDU4MDg2._V1_SX300.jpg"
+      },
+      {
+        "Title": "El monstro del mar!",
+        "Year": "2010",
+        "imdbID": "tt1652207",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTg1NTA1NjE3OV5BMl5BanBnXkFtZTgwODY3NTQyMTE@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Buddha Mar Gaya",
+        "Year": "2007",
+        "imdbID": "tt1083447",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMDY5YmM2MWUtYmNiYy00ZjRhLTlkZjYtNDAyOWE0NDQ3MTgwXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Camarero nocturno en Mar del Plata",
+        "Year": "1986",
+        "imdbID": "tt0203370",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYzQ1Y2UyZWEtZjM3My00Y2QwLWEwMzYtZTk3NjE1OTU3OWJhXkEyXkFqcGdeQXVyMzU0NzkwMDg@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Mar Gaye Oye Loko",
+        "Year": "2018",
+        "imdbID": "tt8785154",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYzExNGNkODctMTRhYi00MmY5LTgwMGQtZWYxNzdjOTdlMzkyXkEyXkFqcGdeQXVyNjE1OTQ0NjA@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Caleuche: El llamado del Mar",
+        "Year": "2012",
+        "imdbID": "tt0433533",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNWI5MzRiZGMtNzY4OS00YTQ3LTg4NmUtODZiNjg0OWU3M2VkXkEyXkFqcGdeQXVyMTcxNTYyMjM@._V1_SX300.jpg"
+      }
+    ],
+    "totalResults": "610",
+    "Response": "True"
+  }
